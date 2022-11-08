@@ -1,0 +1,11 @@
+<h1><%= @task.title %></h1>
+<h3>more details: <%= @task.details %></h3>
+<%# <p>Done: <%= '[x]' * @task.completed %></p>
+
+<p><%= link_to "Edit task: #{@task.title.upcase}", edit_task_path(@task) %></p>
+<p>
+  <%= link_to 'Delete',
+    task_path(@task),
+    data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+</p>
+<p><%= link_to "Back to all tasks", tasks_path %></p>
